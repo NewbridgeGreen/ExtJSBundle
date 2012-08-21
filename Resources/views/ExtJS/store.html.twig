@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+
+        <ul>
+            <li>Total: {{ data.getTotal }}</li>
+            <li>Message: {{ data.getMessage }}</li>
+            <li>Success: {{ data.getSuccess }}</li>
+        </ul>
+        <pre>{{ data | serialize | pretty }}</pre>
+    </body>
+</html>
